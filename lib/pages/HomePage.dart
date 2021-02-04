@@ -3,6 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:instagram_clone/models/user.dart' as iUser;
 import 'package:instagram_clone/pages/CreateAccountPage.dart';
 import 'package:instagram_clone/pages/NotificationsPage.dart';
 import 'package:instagram_clone/pages/ProfilePage.dart';
@@ -13,7 +14,7 @@ import 'package:instagram_clone/pages/UploadPage.dart';
 final GoogleSignIn gSignIn = GoogleSignIn();
 final usersReference = FirebaseFirestore.instance.collection("users");
 final DateTime timestamp = DateTime.now();
-User currentUser;
+iUser.User currentUser =  iUser.User();
 
 class HomePage extends StatefulWidget {
   @override
@@ -23,7 +24,7 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   bool isSignedIn = false;
   int getPageIndex = 0;
-  PageController pageController;
+  PageController pageController = PageController();
 
   Scaffold buildHomeScreen() {
     return Scaffold(
@@ -91,7 +92,7 @@ class _HomePageState extends State<HomePage> {
       print("Error Message: " + gError.toString());
     });
 
-    gSignIn.signInSilently(suppressErrors: false).then((gSignInAccount) {
+    gSignIn.signInSilently(suppressErrors: true).then((gSignInAccount) {
       controlSignIn(gSignInAccount);
     }).catchError(( Object gError) {
       print("Error Message: " + gError.toString());
@@ -136,7 +137,7 @@ class _HomePageState extends State<HomePage> {
       print('Hello');
       // print(documentSnapshot.data());
     }
-    currentUser = User.fromDocument(documentSnapshot.data());
+    currentUser = iUser.User.fromDocument(documentSnapshot);
   }
 
   loginUser() {

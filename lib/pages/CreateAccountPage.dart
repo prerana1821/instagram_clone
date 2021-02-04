@@ -11,21 +11,23 @@ class CreateAccountPage extends StatefulWidget {
 }
 
 class _CreateAccountPageState extends State<CreateAccountPage> {
-  String username;
+  String username = '';
   final _scaffoldKey = GlobalKey<ScaffoldState>();
   final _formKey = GlobalKey<FormState>();
 
-  submitUsername(){
+  submitUsername() {
     final form = _formKey.currentState;
-    if (form.validate()) {
-      form.save();
+    if (form != null) {
+      if (form.validate()) {
+        form.save();
 
-      SnackBar snackBar = SnackBar(content: Text('Welcome' + username));
-      // _scaffoldKey.currentState.showSnackBar(snackbar);
-      ScaffoldMessenger.of(context).showSnackBar(snackBar);
-      Timer(Duration(seconds: 4), (){
-        Navigator.pop(context,username);
-      });
+        
+         _scaffoldKey.currentState.showSnackBar(SnackBar(content: Text('Welcome' + username)));
+        //ScaffoldMessenger.of(context).showSnackBar(snackBar);
+        Timer(Duration(seconds: 4), () {
+          Navigator.pop(context, username);
+        });
+      }
     }
   }
 
@@ -41,50 +43,51 @@ class _CreateAccountPageState extends State<CreateAccountPage> {
       body: ListView(
         children: [
           Container(
-              child: Column(
-            children: [
-              Padding(
-                padding: EdgeInsets.only(top: 26.0),
-                child: Center(
-                  child: Text(
-                    'Setup a Username',
-                    style: TextStyle(fontSize: 26.0),
+            child: Column(
+              children: [
+                Padding(
+                  padding: EdgeInsets.only(top: 26.0),
+                  child: Center(
+                    child: Text(
+                      'Setup a Username',
+                      style: TextStyle(fontSize: 26.0),
+                    ),
                   ),
                 ),
-              ),
-              Padding(
-                padding: EdgeInsets.all(17.0),
-                child: Container(
-                  child: Form(
-                    key: _formKey,
-                    autovalidateMode: AutovalidateMode.always,
-                    child: TextFormField(
-                      style: TextStyle(color: Colors.white),
-                      validator: (val) {
-                        if (val.trim().length < 5 || val.isEmpty) {
-                          return 'User Name is very Short.';
-                        } else if (val.trim().length > 15) {
-                          return 'User Name is very Short.';
-                        } else {
-                          return null;
-                        }
-                      },
-                      onSaved: (val) => username = val,
-                      decoration: InputDecoration(
-                        enabledBorder: UnderlineInputBorder(
-                          borderSide: BorderSide(color: Colors.white),
+                Padding(
+                  padding: EdgeInsets.all(17.0),
+                  child: Container(
+                    child: Form(
+                      key: _formKey,
+                      autovalidateMode: AutovalidateMode.always,
+                      child: TextFormField(
+                        style: TextStyle(color: Colors.white),
+                        validator: (val) {
+                          if(val != null){
+                          if (val.trim().length < 5 || val.isEmpty) {
+                            return 'User Name is very Short.';
+                          } else if (val.trim().length > 15) {
+                            return 'User Name is very Short.';
+                          } else {
+                            return null;
+                          }
+                        }},
+                        onSaved: (val) => username = val,
+                        decoration: InputDecoration(
+                          enabledBorder: UnderlineInputBorder(
+                            borderSide: BorderSide(color: Colors.white),
+                          ),
+                          border: OutlineInputBorder(),
+                          labelText: 'Username',
+                          labelStyle: TextStyle(fontSize: 16.0),
+                          hintText: 'Must be atlest 5 Characters',
+                          hintStyle: TextStyle(color: Colors.grey),
                         ),
-                        border: OutlineInputBorder(),
-                        labelText: 'Username',
-                        labelStyle: TextStyle(fontSize: 16.0),
-                        hintText: 'Must be atlest 5 Characters',
-                        hintStyle: TextStyle(color: Colors.grey),
                       ),
                     ),
                   ),
                 ),
-              ),
-              GestureDetector(
+                GestureDetector(
                   onTap: submitUsername,
                   child: Container(
                     height: 55.0,
