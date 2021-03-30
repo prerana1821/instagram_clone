@@ -21,8 +21,8 @@ class _CreateAccountPageState extends State<CreateAccountPage> {
       if (form.validate()) {
         form.save();
 
-        
-         _scaffoldKey.currentState.showSnackBar(SnackBar(content: Text('Welcome' + username)));
+        _scaffoldKey.currentState
+            .showSnackBar(SnackBar(content: Text('Welcome ' + username)));
         //ScaffoldMessenger.of(context).showSnackBar(snackBar);
         Timer(Duration(seconds: 4), () {
           Navigator.pop(context, username);
@@ -63,15 +63,16 @@ class _CreateAccountPageState extends State<CreateAccountPage> {
                       child: TextFormField(
                         style: TextStyle(color: Colors.white),
                         validator: (val) {
-                          if(val != null){
-                          if (val.trim().length < 5 || val.isEmpty) {
-                            return 'User Name is very Short.';
-                          } else if (val.trim().length > 15) {
-                            return 'User Name is very Short.';
-                          } else {
-                            return null;
+                          if (val != null) {
+                            if (val.trim().length < 5 || val.isEmpty) {
+                              return 'User Name is very Short.';
+                            } else if (val.trim().length > 15) {
+                              return 'User Name is very Short.';
+                            } else {
+                              return null;
+                            }
                           }
-                        }},
+                        },
                         onSaved: (val) => username = val,
                         decoration: InputDecoration(
                           enabledBorder: UnderlineInputBorder(

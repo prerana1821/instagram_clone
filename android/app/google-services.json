@@ -1,194 +1,42 @@
 {
   "project_info": {
-    "project_number": "339394586295",
-    "firebase_url": "https://happy-hours-271418.firebaseio.com",
-    "project_id": "happy-hours-271418",
-    "storage_bucket": "happy-hours-271418.appspot.com"
+    "project_number": "570958525920",
+    "project_id": "instagram-clone-a0d68",
+    "storage_bucket": "instagram-clone-a0d68.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:339394586295:android:8684361f644ca061bd8f32",
-        "android_client_info": {
-          "package_name": "com.anajal.app"
-        }
-      },
-      "oauth_client": [
-        {
-          "client_id": "339394586295-53m9mrf92h8udchlg6fkls2uke334jpg.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
-      "api_key": [
-        {
-          "current_key": "AIzaSyAEUtl0xTs-C4vfktvnxHkIMI30lHjrVN8"
-        },
-        {
-          "current_key": "AIzaSyCSQ3dj_lAudRX0Xx4biOkKOLjegS7Km9c"
-        }
-      ],
-      "services": {
-        "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "339394586295-53m9mrf92h8udchlg6fkls2uke334jpg.apps.googleusercontent.com",
-              "client_type": 3
-            },
-            {
-              "client_id": "339394586295-7idjokrbhq8un375n0je7a8ptk0a12kb.apps.googleusercontent.com",
-              "client_type": 2,
-              "ios_info": {
-                "bundle_id": "com.anajal.app"
-              }
-            }
-          ]
-        }
-      }
-    },
-    {
-      "client_info": {
-        "mobilesdk_app_id": "1:339394586295:android:92f3e735521a5cebbd8f32",
-        "android_client_info": {
-          "package_name": "com.kichigo.app"
-        }
-      },
-      "oauth_client": [
-        {
-          "client_id": "339394586295-53m9mrf92h8udchlg6fkls2uke334jpg.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
-      "api_key": [
-        {
-          "current_key": "AIzaSyAEUtl0xTs-C4vfktvnxHkIMI30lHjrVN8"
-        },
-        {
-          "current_key": "AIzaSyCSQ3dj_lAudRX0Xx4biOkKOLjegS7Km9c"
-        }
-      ],
-      "services": {
-        "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "339394586295-53m9mrf92h8udchlg6fkls2uke334jpg.apps.googleusercontent.com",
-              "client_type": 3
-            },
-            {
-              "client_id": "339394586295-7idjokrbhq8un375n0je7a8ptk0a12kb.apps.googleusercontent.com",
-              "client_type": 2,
-              "ios_info": {
-                "bundle_id": "com.anajal.app"
-              }
-            }
-          ]
-        }
-      }
-    },
-    {
-      "client_info": {
-        "mobilesdk_app_id": "1:339394586295:android:9f015fba9766140cbd8f32",
-        "android_client_info": {
-          "package_name": "com.trending.happyhours"
-        }
-      },
-      "oauth_client": [
-        {
-          "client_id": "339394586295-05ua62j8pl1813vms7f2b1mqq9u64do0.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.trending.happyhours",
-            "certificate_hash": "14c64759f0685938af6db3ebcaf433675230dd8f"
-          }
-        },
-        {
-          "client_id": "339394586295-rmqdna4j7a1gfl1d9015vg89mao7iavk.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.trending.happyhours",
-            "certificate_hash": "d95305e62057da917f8d926dfd837a6b481f4e48"
-          }
-        },
-        {
-          "client_id": "339394586295-53m9mrf92h8udchlg6fkls2uke334jpg.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
-      "api_key": [
-        {
-          "current_key": "AIzaSyAEUtl0xTs-C4vfktvnxHkIMI30lHjrVN8"
-        },
-        {
-          "current_key": "AIzaSyCSQ3dj_lAudRX0Xx4biOkKOLjegS7Km9c"
-        }
-      ],
-      "services": {
-        "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "339394586295-53m9mrf92h8udchlg6fkls2uke334jpg.apps.googleusercontent.com",
-              "client_type": 3
-            },
-            {
-              "client_id": "339394586295-7idjokrbhq8un375n0je7a8ptk0a12kb.apps.googleusercontent.com",
-              "client_type": 2,
-              "ios_info": {
-                "bundle_id": "com.anajal.app"
-              }
-            }
-          ]
-        }
-      }
-    },
-    {
-      "client_info": {
-        "mobilesdk_app_id": "1:339394586295:android:b6acb3487902ceb5bd8f32",
+        "mobilesdk_app_id": "1:570958525920:android:e662497cad2a91fa58a785",
         "android_client_info": {
           "package_name": "precodes.com.instagram_clone"
         }
       },
       "oauth_client": [
         {
-          "client_id": "339394586295-9q6q8oulsuiledvm8qak8op5rcnk1go5.apps.googleusercontent.com",
+          "client_id": "570958525920-oni1m0kdrsmbg5plt90910m7hthblpul.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "precodes.com.instagram_clone",
-            "certificate_hash": "14c64759f0685938af6db3ebcaf433675230dd8f"
+            "certificate_hash": "604b0e44a17f92fd48b145343c762a39f1890f49"
           }
         },
         {
-          "client_id": "339394586295-t7g3qa2o4l2p6q7oikcvb85j27c9h6m3.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "precodes.com.instagram_clone",
-            "certificate_hash": "d95305e62057da917f8d926dfd837a6b481f4e48"
-          }
-        },
-        {
-          "client_id": "339394586295-53m9mrf92h8udchlg6fkls2uke334jpg.apps.googleusercontent.com",
+          "client_id": "570958525920-bqpheu3bpi536ajvdhf80sqedelnbo42.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyAEUtl0xTs-C4vfktvnxHkIMI30lHjrVN8"
-        },
-        {
-          "current_key": "AIzaSyCSQ3dj_lAudRX0Xx4biOkKOLjegS7Km9c"
+          "current_key": "AIzaSyCChnWP694CSgGbpUx03RDM4dTMgbGqYVE"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "339394586295-53m9mrf92h8udchlg6fkls2uke334jpg.apps.googleusercontent.com",
+              "client_id": "570958525920-bqpheu3bpi536ajvdhf80sqedelnbo42.apps.googleusercontent.com",
               "client_type": 3
-            },
-            {
-              "client_id": "339394586295-7idjokrbhq8un375n0je7a8ptk0a12kb.apps.googleusercontent.com",
-              "client_type": 2,
-              "ios_info": {
-                "bundle_id": "com.anajal.app"
-              }
             }
           ]
         }

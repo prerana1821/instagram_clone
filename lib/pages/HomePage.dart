@@ -1,4 +1,4 @@
-import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_sign_in/google_sign_in.dart';
@@ -10,11 +10,15 @@ import 'package:instagram_clone/pages/ProfilePage.dart';
 import 'package:instagram_clone/pages/SearchPage.dart';
 import 'package:instagram_clone/pages/TimeLinePage.dart';
 import 'package:instagram_clone/pages/UploadPage.dart';
+// import 'package:firebase_auth/firebase_auth.dart';
 
 final GoogleSignIn gSignIn = GoogleSignIn();
 final usersReference = FirebaseFirestore.instance.collection("users");
+final postsReference = FirebaseFirestore.instance.collection("posts");
+final Reference storageReference =
+    FirebaseStorage.instance.ref().child('Posts Pictures');
 final DateTime timestamp = DateTime.now();
-iUser.User currentUser =  iUser.User();
+iUser.User currentUser = iUser.User();
 
 class HomePage extends StatefulWidget {
   @override
@@ -30,16 +34,21 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       body: PageView(
         children: [
-          // TimeLinePage
-          RaisedButton.icon(
-            onPressed: logoutUser,
-            icon: Icon(Icons.close),
-            label: Text('Sign Out'),
-          ),
+          TimeLinePage(),
+          // RaisedButton.icon(
+          //   onPressed: logoutUser,
+          //   icon: Icon(Icons.close),
+          //   label: Text('Sign Out'),
+          // ),
           SearchPage(),
-          UploadPage(),
+          UploadPage(
+            gCurrentUser: currentUser,
+          ),
           NotificationsPage(),
-          ProfilePage(),
+          ProfilePage(
+            // userProfileId: currentUser,
+            userProfileId: currentUser?.id,
+          ),
         ],
         controller: pageController,
         onPageChanged: whenPageChanges,
@@ -88,13 +97,13 @@ class _HomePageState extends State<HomePage> {
     pageController = PageController();
     gSignIn.onCurrentUserChanged.listen((gSigninAccount) {
       controlSignIn(gSigninAccount);
-    }, onError: ( Object gError) {
+    }, onError: (Object gError) {
       print("Error Message: " + gError.toString());
     });
 
     gSignIn.signInSilently(suppressErrors: true).then((gSignInAccount) {
       controlSignIn(gSignInAccount);
-    }).catchError(( Object gError) {
+    }).catchError((Object gError) {
       print("Error Message: " + gError.toString());
     });
   }
